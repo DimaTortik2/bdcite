@@ -1,0 +1,175 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+
+a,p {
+  color: aliceblue;
+  text-decoration: none;
+}
+
+html,
+body {
+	width: 100vw;
+	height: 100vh;
+
+  overflow-x: hidden;
+}
+
+:root{
+  --index : calc(1vh + 1vh);
+}
+
+section{
+
+  background-color: #363535;
+
+  width: 100%;
+  height: 220%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card{
+  border-style: solid;
+  border-radius: 10px;
+  border-width: 2px;
+  border-color: #36d79133;
+
+  width: calc(var(--index) * 30);
+  height: 95vh;
+
+  /* position: relative; */
+
+  backdrop-filter: blur(7px);
+
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.choosing{
+  font-size: 1.2rem;
+
+  margin-top: 10%;
+  margin-left: calc(var(--index) * 4);
+
+
+  width: calc(var(--index) * 12);
+  
+  display: flex;
+  justify-content: space-between;
+}
+
+/*  */
+.sign_in-up_tiled{
+  border-width: 2px;
+  border-bottom-style: solid;
+  border-color: #36D792;
+}
+/*  */
+
+.forms{
+  width: 100%;
+  height: 26vh;
+
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  margin-top: 5vh;
+}
+
+.type-form{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.type-form input{
+  margin-left: calc(var(--index) * 3);
+}
+.type-form p{
+  margin-left: calc(var(--index) * 4);
+  margin-bottom: 0.5vh;
+}
+
+.type-form input{
+  width: calc(var(--index) * 24);
+  height: 4vh;
+  font-size: 1.1rem;
+
+  background-color: rgb(228, 228, 228);
+
+  border-style: none;
+  border-radius: 20px;
+
+  margin-bottom: 3vh;
+}
+
+.sign_container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+#sign_in,#sign_up{
+  background-color: #36D792;
+
+
+  width: calc(var(--index) * 24);
+  height: calc(var(--index) * 2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 20px;
+
+  transition: 0.5s;
+  
+}
+#sign_in:hover{
+  transform: scale(1.01);
+  background-color: #2cb378;
+ 
+  transition: 0.5s;
+}
+
+
+.card hr{
+  width: calc(var(--index) * 24);
+  margin-left: calc(var(--index) * 3);
+  margin-top: 3vh;
+
+  color:  #36d79133;
+  background-color:  #36d79133;
+  height: 2px;
+  border-style: none;
+  border-radius: 20px;
+
+}
+
+
+.forgot_password_container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  margin-top: 2vh;
+}
+
+.sign_up_form{
+  margin-top: 10vh;
+  
+}
+.sing_up{
+  margin-top: 20vh;
+}
+/* .sing_up{
+  display: none;
+} */

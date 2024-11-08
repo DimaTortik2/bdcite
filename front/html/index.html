@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/main.js" defer></script>
+</head>
+<body>
+
+    <section>
+
+        <button id="test" class="test">test_auth</button>
+
+        <div class="sing_in card">
+            <div class="choosing">
+                <p class="sign_in-up_tiled" id="choose_sing_in">SIGN IN</p>
+                <a href="#" id="choose_sing_up">SIGN UP</a>
+            </div>
+           
+            <div class="forms">
+
+                <form id="loginForm">
+                    <div class="type-form">
+                        <p>USERNAME</p>
+                        <input name="username" type="text">
+                    </div>
+                
+                    <div class="type-form">
+                        <p>PASSWORD</p>
+                        <input name="password" type="password">
+                    </div>
+
+                    <div class="sign_container">
+                        <button type="submit" id="sign_in">SIGN IN</button>
+                    </div>
+                </form>
+
+            </div>
+
+
+            <hr>
+
+            <div class="forgot_password_container">
+                <a href="#" id="forgot_password" >Forgot Password?</a>
+            </div>
+            <div>
+                <p id="answer_login"></p>
+
+            </div>
+
+        </div>
+
+        <div class="sing_up card">
+
+
+             <div class="choosing">
+                <a  id="choose_sing_in">SIGN IN</a>
+                <p href="#" class="sign_in-up_tiled" id="choose_sing_up">SIGN UP</p>
+            </div>
+
+                <div class="forms sign_up_form">
+
+                    <form id="registerForm">
+
+                        <div class="type-form">
+                            <p>USERNAME</p>
+                            <input name="username" type="text"> 
+                        </div>
+
+                        <div class="type-form">
+                            <p>PASSWORD</p>
+                            <input name="password" type="password">
+                        </div>
+
+                        <div class="type-form">
+                            <p>CONFIRM PASSWORD</p>
+                            <input name="confirm_password" type="password">
+                        </div>
+
+                        <div class="sign_container">
+                            <button type="submit" id="sign_up" >SIGN UP</button>
+                        </div>
+                    </form>
+
+                     <p id="answer_register"></p>
+                </div>
+         
+        </div>
+
+    </section>
+
+       
+        
+
+</body>
+</html>
