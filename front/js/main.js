@@ -61,28 +61,32 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
 })
 
 
-async function fetchWithAuth(url, options = {}) {
-  const token = localStorage.getItem('token')
+async function fetchWithAuth(url, options = {}, responseType = 'json') {
+	const token = localStorage.getItem('token')
 
-  if(!token){
-    alert('Вы не авторизованы')
-    return
-  }
+	if (!token) {
+		alert('Вы не авторизованы')
+		return
+	}
 
-  options.headers = {
+	options.headers = {
 		...options.headers,
 		Authorization: token,
 	}
 
-  const require = await fetch(url, options)
-	return await require.json()
-
+	
+	const response = await fetch(url, options)
+  if(responseType === 'json'){
+	  return await response.json()
+  }
+  else if ( responseType === 'text'){
+    return await response.text()
+  }
 }
 
 
 document.getElementById('test').addEventListener('click' ,async e => {
   e.preventDefault()
-  const result = await fetchWithAuth('/protected')
-
-  alert(result.message)
+  const html = await fetchWithAuth('/protected/message', {}, 'text')
+  document.documentElement.innerHTML = html
 })
