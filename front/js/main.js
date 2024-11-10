@@ -61,7 +61,7 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
 })
 
 
-async function fetchWithAuth(url, options = {}, responseType = 'json') {
+async function fetchWithAuth(url, options = {}) {
 	const token = localStorage.getItem('token')
 
 	if (!token) {
@@ -76,17 +76,17 @@ async function fetchWithAuth(url, options = {}, responseType = 'json') {
 
 	
 	const response = await fetch(url, options)
-  if(responseType === 'json'){
+
 	  return await response.json()
-  }
-  else if ( responseType === 'text'){
-    return await response.text()
-  }
+  
 }
 
 
 document.getElementById('test').addEventListener('click' ,async e => {
   e.preventDefault()
-  const html = await fetchWithAuth('/protected/message', {}, 'text')
-  document.documentElement.innerHTML = html
+  const answer = await fetchWithAuth('/protected/message', {})
+  console.log(answer.bool)
+	if(answer.bool){
+		window.location.href = '../html/message.html'
+	}
 })

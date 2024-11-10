@@ -23,23 +23,27 @@ app.post('/register', registerUser)
 app.post('/login', loginUser)
 
 app.get('/protected/message', authenticateToken, (req, res) => {
-	
-	res.sendFile(path.join(__dirname, '..', '..', 'front', 'html', 'message.html'))
+
+	res.json({bool : true})
 
 })
 
 const server = http.createServer(app)
 const wss = new WebSocket.Server({server})
 
-wss.on('message', (message)=> {
-	console.log(`новое сообщение пришло : ${message}\n`)
+wss.on('connection', ws => {
+	ws.on('message', message => {
+		console.log(`Новое сообщение: ${message}`)
 
-	wss.clients.forEach((client) => {
-		if(client.readyState === WebSocket.OPEN){
-			client.send(message)
-		}
+		// Отправляем сообщение всем подключенным клиентам
+		wss.clients.forEach(client => {
+			if (client.readyState === WebSocket.OPEN) {
+				client.send(message)
+			}
+		})
 	})
 })
+
 
 server.listen(3000, () => {
 	console.log('Сервер запущен на порту 3000')
